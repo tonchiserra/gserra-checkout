@@ -1,0 +1,28 @@
+api_version = "2025-07"
+
+[[extensions]]
+name = "ui-bundle-off-banner"
+handle = "ui-bundle-off-banner"
+type = "ui_extension"
+
+[[extensions.targeting]]
+module = "./src/Checkout.tsx"
+target = "purchase.checkout.block.render"
+
+[extensions.capabilities]
+api_access = true
+
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "banner_text"
+type = "single_line_text_field"
+name = "Banner text"
+description = "Enter a text for the banner. Example: Thank you for choosing our bundle—enjoy your 10 % discount!"
+
+[[extensions.settings.fields]]
+key = "banner_status"
+type = "single_line_text_field"
+name = "Banner status"
+[[extensions.settings.fields.validations]]
+name = "choices"
+value = "[\"info\", \"success\", \"warning\", \"critical\"]"

@@ -8,6 +8,7 @@ handle = "gserra-checkout"
 
 [build]
 include_config_on_deploy = true
+dev_store_url = "gserra-test.myshopify.com"
 
 [webhooks]
 api_version = "2025-07"
