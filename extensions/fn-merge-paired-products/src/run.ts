@@ -21,12 +21,11 @@ export function run(input: RunInput): FunctionRunResult {
 
     RESULT.operations.push({
       merge: {
-        attributes: [ { key: "_pairedProduct", value: key } ],
         cartLines,
         parentVariantId: (pairedProduct[0].merchandise as ProductVariant).id,
         price: {
           percentageDecrease: {
-            value: 10
+            value: key.includes('-') ? parseInt(key.split('-')[1]) : 0
           }
         }
       }
